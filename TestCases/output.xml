@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-04T16:01:44.341620" rpa="false" schemaversion="5">
+<suite id="s1" name="Gift item" source="C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\testcases\Gift_item.robot">
+<test id="s1-t1" name="add to Cart Gift" line="18">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-12-04T16:01:44.582630" elapsed="0.000259"/>
+</kw>
+<kw name="Login Test" owner="LoginTest">
+<kw name="Open Browser To Login Page" owner="LoginKeywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:01:44.584023" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-04T16:01:44.583814" elapsed="4.756502"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-04T16:01:49.341110" elapsed="1.065149"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:01:44.583575" elapsed="5.822819"/>
+</kw>
+<kw name="Login page link" owner="LoginKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:01:50.407629" level="INFO">Clicking element 'xpath://a[normalize-space()='Log in']'.</msg>
+<arg>${Login_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:01:50.407239" elapsed="2.541612"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:01:50.406569" elapsed="2.542423"/>
+</kw>
+<kw name="Enter Email" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:01:52.949706" level="INFO">Typing text 'tester123321@gmail.com' into text field 'id:Email'.</msg>
+<arg>${txt_user_name}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:01:52.949476" elapsed="3.170648"/>
+</kw>
+<arg>tester123321@gmail.com</arg>
+<status status="PASS" start="2025-12-04T16:01:52.949190" elapsed="3.171068"/>
+</kw>
+<kw name="Enter Password" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:01:56.120952" level="INFO">Typing text 'Tester@123' into text field 'id:Password'.</msg>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:01:56.120734" elapsed="3.106968"/>
+</kw>
+<arg>Tester@123</arg>
+<status status="PASS" start="2025-12-04T16:01:56.120444" elapsed="3.107438"/>
+</kw>
+<kw name="Click Login Button" owner="LoginKeywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:01:59.228798" level="INFO">Clicking button 'xpath://input[@value='Log in']'.</msg>
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:01:59.228506" elapsed="3.926495"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:01:59.228131" elapsed="3.927420"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:01:44.583264" elapsed="18.572584"/>
+</kw>
+<kw name="Select Gift_cards" owner="Git">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:03.159228" level="INFO">Clicking element 'xpath:(//a[normalize-space()='Gift Cards'])[1]'.</msg>
+<arg>${Click_Gift_Cards}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:03.158408" elapsed="2.825661"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:03.157267" elapsed="2.827360"/>
+</kw>
+<kw name="Select Randomly_gift_card" owner="Git">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:07.004900" level="INFO">@{elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="a1c0df086a0b89a287ae1a58fc35f66e", element="f.0FF7DE50C4E68532E8F1A91DFC63020F.d.41B7EB3AB597BC283DAC9060F51374D1.e.61")&gt; | &lt;selenium.webdr...</msg>
+<var>@{elements}</var>
+<arg>css:.product-item .product-title a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:05.987693" elapsed="1.017401"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-12-04T16:02:07.006240" level="INFO">Length is 4.</msg>
+<msg time="2025-12-04T16:02:07.006571" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-12-04T16:02:07.005663" elapsed="0.001066"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${count} == 0</arg>
+<arg>Fail</arg>
+<arg>No product links found on the page!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-04T16:02:07.007249" elapsed="0.000793"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-12-04T16:02:07.009248" level="INFO">${random_index} = 2</msg>
+<var>${random_index}</var>
+<arg>random.randint(0, ${count}-1)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-04T16:02:07.008595" elapsed="0.000684"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:07.010101" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="a1c0df086a0b89a287ae1a58fc35f66e", element="f.0FF7DE50C4E68532E8F1A91DFC63020F.d.41B7EB3AB597BC283DAC9060F51374D1.e.61")&gt;'.</msg>
+<arg>${elements}[${0}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:07.009385" elapsed="1.975194"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:05.986307" elapsed="2.998460"/>
+</kw>
+<kw name="Enter Recipt_name_email" owner="Git">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:08.985918" level="INFO">Typing text 'kumar' into text field 'xpath://input[@id='giftcard_1_RecipientName']'.</msg>
+<arg>${Enter_reciptentname}</arg>
+<arg>${rp_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:08.985666" elapsed="3.177933"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:12.165734" level="INFO">Typing text 'kumar@gmil.com' into text field 'xpath://input[@id='giftcard_1_RecipientEmail']'.</msg>
+<arg>${Enter_reciptentemail}</arg>
+<arg>${rp_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:12.164473" elapsed="3.188421"/>
+</kw>
+<arg>${name}</arg>
+<arg>${eamil}</arg>
+<status status="PASS" start="2025-12-04T16:02:08.985252" elapsed="6.368134"/>
+</kw>
+<kw name="Add_to_cart" owner="Git">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:15.356862" level="INFO">Clicking element '//div[@class='add-to-cart-panel']//input[contains(@id,'add-to-cart')]'.</msg>
+<arg>${add_to_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:15.355943" elapsed="2.090798"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:15.354834" elapsed="2.092374"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>css=.content</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-12-04T16:02:17.448531" elapsed="6.532478"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:23.983330" level="INFO">Clicking element 'css=.cart-label'.</msg>
+<arg>css=.cart-label</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:23.982502" elapsed="2.703509"/>
+</kw>
+<kw name="Select_shipping_cart" owner="Git">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:26.689620" level="INFO">Clicking element 'xpath://div[@class='header-links-wrapper']//span[normalize-space()='Shopping cart']'.</msg>
+<arg>${click_ship_to_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:26.688756" elapsed="2.579153"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:26.687562" elapsed="2.580483"/>
+</kw>
+<kw name="Select Checkboxvalue" owner="Git">
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:29.269279" level="INFO">Selecting checkbox 'id:termsofservice'.</msg>
+<arg>${Select_checkbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:29.269069" elapsed="5.168434"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:29.268782" elapsed="5.169653"/>
+</kw>
+<kw name="Select Checkout" owner="Git">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:34.441843" level="INFO">Clicking element 'xpath://button[@id='checkout']'.</msg>
+<arg>${Click_Checkout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:34.441610" elapsed="3.533262"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:34.440381" elapsed="3.535028"/>
+</kw>
+<kw name="Select Billing_address" owner="Git">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:37.979505" level="INFO">Clicking element 'xpath://input[@onclick='Billing.save()']'.</msg>
+<arg>${click_billing}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:37.978336" elapsed="2.149976"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:37.976987" elapsed="2.151865"/>
+</kw>
+<kw name="Select Shipping Method" owner="Git">
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:40.133813" level="INFO">Selecting 'Payments.CashOnDelivery' from radio button 'paymentmethod'.</msg>
+<arg>${Radio_Shipping_Method}</arg>
+<arg>${Shipping_metod}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2025-12-04T16:02:40.132582" elapsed="2.051070"/>
+</kw>
+<arg>${Payment_Method}</arg>
+<status status="PASS" start="2025-12-04T16:02:40.130426" elapsed="2.053760"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Pay By Cash" owner="Git">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:42.189715" level="INFO">Clicking element 'xpath://input[@class='button-1 payment-method-next-step-button']'.</msg>
+<arg>${click_payment}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:42.188848" elapsed="2.112216"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:44.301696" level="INFO">Clicking element 'xpath://input[@class='button-1 payment-info-next-step-button']'.</msg>
+<arg>${click_continue_payment}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:44.301343" elapsed="2.118214"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:42.187600" elapsed="4.232130"/>
+</kw>
+<arg>'${Payment_Method}'=='Payments.CashOnDelivery'</arg>
+<arg>Pay By Cash</arg>
+<arg>ELSE IF</arg>
+<arg>'${Payment_Method}'=='Payments.Manual'</arg>
+<arg>Pay By Credit</arg>
+<arg>${Card_Dropdown_Value}</arg>
+<arg>${Card_Name}</arg>
+<arg>${Card_Number}</arg>
+<arg>${Card_Expiry_Date}</arg>
+<arg>${Card_Expiry_Month}</arg>
+<arg>${code}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-04T16:02:42.185683" elapsed="4.234143"/>
+</kw>
+<kw name="Select Confirm_Payment" owner="Git">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T16:02:46.421116" level="INFO">Clicking element 'xpath://input[@value='Confirm']'.</msg>
+<arg>${Click_confirm_Payment}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T16:02:46.420828" elapsed="2.116815"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:02:46.420405" elapsed="2.117473"/>
+</kw>
+<status status="PASS" start="2025-12-04T16:01:44.581623" elapsed="63.957079"/>
+</test>
+<status status="PASS" start="2025-12-04T16:01:44.342943" elapsed="64.197745"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Gift item" id="s1" pass="1" fail="0" skip="0">Gift item</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
