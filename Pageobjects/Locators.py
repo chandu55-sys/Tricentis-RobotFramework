@@ -75,6 +75,12 @@ Click_Digital_downloads = "xpath://ul[@class='top-menu']//a[normalize-space()='D
 Click_Jewelry = "xpath://ul[@class='top-menu']//a[normalize-space()='Jewelry']"
 Click_Gift_Cards = "xpath:(//a[normalize-space()='Gift Cards'])[1]"
 
+#Under Electronics
+Click_Camera_photo="xpath://img[@title='Show products in category Camera, photo']"
+Click_Phones="xpath://img[@title='Show products in category Cell phones']"
+
+
+
 # Newsletter Subscribe
 Enter_email_subscribe = "xpath://input[@id='newsletter-email']"
 Click_Subscribe = "xpath://input[@id='newsletter-subscribe-button']"

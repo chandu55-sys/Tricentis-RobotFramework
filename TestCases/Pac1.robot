@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 Resource   ../Resources/LoginKeywords.robot
 Resource   ../TestCases/LoginTest.robot
 Resource   ../TestCases/Shippingkeywords.robot
+Resource  ../TestCases/Account_change.robot
 Library    Collections
 Library    String
 Library    BuiltIn
@@ -11,6 +12,7 @@ Library    BuiltIn
 
 *** Test Cases ***
 Login to add to cart
+    [Tags]    sanity
     set selenium speed  1s
     Login Test
     Select books
@@ -23,3 +25,6 @@ Login to add to cart
     ${random_index}=    Evaluate    random.randint(0, ${count}-1)    modules=random
 
     Click Element    ${elements}[${random_index}]
+Account_chage
+    [Tags]    regression
+    Change_Account_Details

@@ -1,0 +1,17 @@
+--suite SingleTest Login Change
+--include Regression
+--variable CALLER_ID:ea5cb07fe0cf40fe85f2744e4e04e53d
+--variable PABOTLIBURI:127.0.0.1:8270
+--variable PABOTEXECUTIONPOOLID:0
+--variable PABOTISLASTEXECUTIONINPOOL:1
+--variable PABOTNUMBEROFPROCESSES:8
+--variable PABOTQUEUEINDEX:0
+--variable PABOTLASTLEVEL:
+--listener RobotStackTracer
+--log NONE
+--report NONE
+--xunit NONE
+--outputdir .\pabot_results\0
+--consolecolors off
+--consolemarkers off
+.\SingleTest_Login_Change.robot

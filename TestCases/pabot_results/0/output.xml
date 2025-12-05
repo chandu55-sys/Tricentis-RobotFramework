@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-05T13:16:48.357702" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-05T13:15:51.636425" rpa="false" schemaversion="5">
 <suite id="s1" name="SingleTest Login Change" source="C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\TestCases\SingleTest_Login_Change.robot">
 <test id="s1-t1" name="Change Test" line="9">
 <kw name="Change_Account_Details" owner="Account_change">
@@ -111,8 +111,7 @@
 <tag>Sanity</tag>
 <status status="PASS" start="2025-12-05T13:15:51.885850" elapsed="54.061324"/>
 </test>
-<doc>[https://pabot.org/?ref=log|Pabot] result from 1 executions.</doc>
-<status status="PASS" start="2025-12-05T13:15:51.655000" elapsed="54.061000"/>
+<status status="PASS" start="2025-12-05T13:15:51.655501" elapsed="54.292294"/>
 </suite>
 <statistics>
 <total>

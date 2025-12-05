@@ -8,6 +8,7 @@ Resource    ../Resources/Registerkeywords.robot
 
 *** Test Cases ***
 Registration Test
+    [Tags]    regression
     set selenium speed  2s
     Open Browser To Registration Page
     Click Registration link
