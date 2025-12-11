@@ -30,3 +30,18 @@ Select Randomly Phone
 
      Click Element    ${elements}[${0}]
 
+     Click Element    ${add_to_cart}
+
+Select ship to cart
+    Click Element    ${click_ship_to_cart}
+Select country
+    [Arguments]    ${country}
+    Select From List By Label  ${drp_country}  ${country}
+Select state
+    [Arguments]    ${state}
+    Select From List By Label    ${drp_state}    ${state}
+Select Checkboxvalue
+    select checkbox  ${Select_checkbox}
+Select Checkout
+    Click Element   ${Click_Checkout}
+

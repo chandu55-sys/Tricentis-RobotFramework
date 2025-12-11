@@ -6,6 +6,6 @@ Resource  ../TestCases/Account_change.robot
 Login
     [Tags]    Sanity
     Login Test
-#Change Test
- #   [Tags]    Sanity    Regression
-  #  Change_Account_Details
+Change Test
+    [Tags]    Sanity    Regression
+    Change_Account_Details

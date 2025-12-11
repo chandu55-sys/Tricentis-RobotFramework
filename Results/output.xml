@@ -1,129 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-05T13:23:46.989574" rpa="false" schemaversion="5">
-<suite id="s1" name="SingleTest Login Change" source="C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\TestCases\SingleTest_Login_Change.robot">
-<test id="s1-t1" name="Change Test" line="9">
-<kw name="Change_Account_Details" owner="Account_change">
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>2seconds</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-12-05T13:22:50.714164" elapsed="0.000278"/>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-08T15:37:28.413833" rpa="false" schemaversion="5">
+<suite id="s1" name="TricentisDemo" source="C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo">
+<suite id="s1-s1" name="APITesting" source="C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\APITesting">
+<suite id="s1-s1-s1" name="GetRequest" source="C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\APITesting\GetRequest.robot">
+<test id="s1-s1-s1-t1" name="Get Coffees" line="5">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-12-08T15:37:28.561856" level="INFO">Creating Session using : alias=api, url=https://webservice.toscacloud.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>https://webservice.toscacloud.com</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-12-08T15:37:28.561382" elapsed="0.001029"/>
 </kw>
-<kw name="Login Test" owner="LoginTest">
-<kw name="Open Browser To Login Page" owner="LoginKeywords">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:22:50.715356" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-12-05T13:22:50.715127" elapsed="5.830248"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-08T15:37:28.563669" level="INFO">${headers} = {'accept': 'text/plain'}</msg>
+<var>${headers}</var>
+<arg>accept=text/plain</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-08T15:37:28.562785" elapsed="0.001098"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-12-05T13:22:56.546329" elapsed="2.050675"/>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-12-08T15:37:29.416689" level="INFO">GET Request : url=https://webservice.toscacloud.com/api/v1/Coffees/11229 
+ path_url=/api/v1/Coffees/11229 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'accept': 'text/plain', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-12-08T15:37:29.417089" level="INFO">GET Response : url=https://webservice.toscacloud.com/api/v1/Coffees/11229 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Mon, 08 Dec 2025 10:07:25 GMT', 'Server': 'Microsoft-IIS/10.0', 'Content-Encoding': 'gzip', 'Set-Cookie': 'ARRAffinity=32975fd413347f79454db32b27e4eceb9a559f1f1a07633ca9e6881566d65e6c;Path=/;HttpOnly;Secure;Domain=webservice.toscacloud.com, ARRAffinitySameSite=32975fd413347f79454db32b27e4eceb9a559f1f1a07633ca9e6881566d65e6c;Path=/;HttpOnly;SameSite=None;Secure;Domain=webservice.toscacloud.com', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000', 'api-supported-versions': '1.0', 'Content-Security-Policy': "default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'", 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff'} 
+ body={"description":"chandu tarak","id":11229,"name":"tarak"} 
+ </msg>
+<msg time="2025-12-08T15:37:29.417313" level="INFO">C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\.venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'webservice.toscacloud.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-12-08T15:37:29.417633" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/api/v1/Coffees/11229</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-08T15:37:28.564114" elapsed="0.853670"/>
 </kw>
-<status status="PASS" start="2025-12-05T13:22:50.714890" elapsed="7.882719"/>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-12-08T15:37:29.418049" elapsed="0.000739"/>
 </kw>
-<kw name="Login page link" owner="LoginKeywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:22:58.600047" level="INFO">Clicking element 'xpath://a[normalize-space()='Log in']'.</msg>
-<arg>${Login_link}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-05T13:22:58.599265" elapsed="4.524567"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-12-08T15:37:29.419020" elapsed="0.000875"/>
 </kw>
-<status status="PASS" start="2025-12-05T13:22:58.598442" elapsed="4.525561"/>
-</kw>
-<kw name="Enter Email" owner="LoginKeywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:23:03.124817" level="INFO">Typing text 'tester123321@gmail.com' into text field 'id:Email'.</msg>
-<arg>${txt_user_name}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-05T13:23:03.124558" elapsed="6.178862"/>
-</kw>
-<arg>tester123321@gmail.com</arg>
-<status status="PASS" start="2025-12-05T13:23:03.124213" elapsed="6.179355"/>
-</kw>
-<kw name="Enter Password" owner="LoginKeywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:23:09.304403" level="INFO">Typing text 'Tester@123' into text field 'id:Password'.</msg>
-<arg>${txt_password}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-05T13:23:09.304124" elapsed="6.125740"/>
-</kw>
-<arg>Tester@123</arg>
-<status status="PASS" start="2025-12-05T13:23:09.303761" elapsed="6.126980"/>
-</kw>
-<kw name="Click Login Button" owner="LoginKeywords">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:23:15.434485" level="INFO">Clicking button 'xpath://input[@value='Log in']'.</msg>
-<arg>${login_button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-05T13:23:15.433421" elapsed="7.054437"/>
-</kw>
-<status status="PASS" start="2025-12-05T13:23:15.432021" elapsed="7.056401"/>
-</kw>
-<status status="PASS" start="2025-12-05T13:22:50.714631" elapsed="31.774143"/>
-</kw>
-<kw name="Select_my_Account" owner="My_Account_Customer_info">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:23:22.491927" level="INFO">Clicking element 'xpath://a[normalize-space()='My account']'.</msg>
-<arg>${Click_my_account}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-05T13:23:22.490872" elapsed="4.591899"/>
-</kw>
-<status status="PASS" start="2025-12-05T13:23:22.489532" elapsed="4.593784"/>
-</kw>
-<kw name="Change Firstname" owner="My_Account_Customer_info">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:23:27.086748" level="INFO">Typing text 'ravi' into text field 'xpath://input[@id='FirstName']'.</msg>
-<arg>${Enter_Firstname}</arg>
-<arg>${firstname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-05T13:23:27.085565" elapsed="6.160459"/>
-</kw>
-<arg>ravi</arg>
-<status status="PASS" start="2025-12-05T13:23:27.084063" elapsed="6.162537"/>
-</kw>
-<kw name="Change Lastname" owner="My_Account_Customer_info">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:23:33.250051" level="INFO">Typing text 'Tester' into text field 'xpath://input[@id='LastName']'.</msg>
-<arg>${Enter_Lastname}</arg>
-<arg>${lastname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-05T13:23:33.248829" elapsed="6.207333"/>
-</kw>
-<arg>Tester</arg>
-<status status="PASS" start="2025-12-05T13:23:33.247355" elapsed="6.209368"/>
-</kw>
-<kw name="Select Save" owner="My_Account_Customer_info">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-12-05T13:23:39.459935" level="INFO">Clicking element 'xpath://input[@name='save-info-button']'.</msg>
-<arg>${Click_Save}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-05T13:23:39.458884" elapsed="5.177491"/>
-</kw>
-<status status="PASS" start="2025-12-05T13:23:39.457461" elapsed="5.179102"/>
-</kw>
-<status status="PASS" start="2025-12-05T13:22:50.713490" elapsed="53.923177"/>
-</kw>
-<tag>Regression</tag>
-<tag>Sanity</tag>
-<status status="PASS" start="2025-12-05T13:22:50.712822" elapsed="53.924046"/>
+<status status="PASS" start="2025-12-08T15:37:28.558060" elapsed="0.862086"/>
 </test>
-<doc>[https://pabot.org/?ref=log|Pabot] result from 1 executions.</doc>
-<status status="PASS" start="2025-12-05T13:22:50.469000" elapsed="53.924000"/>
+<status status="PASS" start="2025-12-08T15:37:28.455652" elapsed="0.969610"/>
+</suite>
+<status status="PASS" start="2025-12-08T15:37:28.451296" elapsed="0.977397"/>
+</suite>
+<status status="PASS" start="2025-12-08T15:37:28.421059" elapsed="1.009939"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Regression</stat>
-<stat pass="1" fail="0" skip="0">Sanity</stat>
 </tag>
 <suite>
-<stat name="SingleTest Login Change" id="s1" pass="1" fail="0" skip="0">SingleTest Login Change</stat>
+<stat name="TricentisDemo" id="s1" pass="1" fail="0" skip="0">TricentisDemo</stat>
+<stat name="APITesting" id="s1-s1" pass="1" fail="0" skip="0">TricentisDemo.APITesting</stat>
+<stat name="GetRequest" id="s1-s1-s1" pass="1" fail="0" skip="0">TricentisDemo.APITesting.GetRequest</stat>
 </suite>
 </statistics>
 <errors>

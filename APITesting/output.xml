@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-08T13:25:56.326425" rpa="false" schemaversion="5">
+<suite id="s1" name="Postchain" source="C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\apitesting\postchain.robot">
+<test id="s1-t1" name="Create Coffee" line="10">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-12-08T13:25:56.457235" level="INFO">Creating Session using : alias=api, url=https://webservice.toscacloud.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-12-08T13:25:56.456986" elapsed="0.000443"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-08T13:25:56.458069" level="INFO">${headers} = {'Content-Type': 'application/json', 'Accept': 'text/plain'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Accept=text/plain</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-08T13:25:56.457781" elapsed="0.000317"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-08T13:25:56.458499" level="INFO">${payload} = {'Description': 'raju raju', 'Name': 'raju bhai'}</msg>
+<var>${payload}</var>
+<arg>Description=raju raju</arg>
+<arg>Name=raju bhai</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-08T13:25:56.458348" elapsed="0.000174"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-08T13:25:57.515130" level="INFO">POST Request : url=https://webservice.toscacloud.com/api/v1/Coffees 
+ path_url=/api/v1/Coffees 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': 'text/plain', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '49'} 
+ body=b'{"Description": "raju raju", "Name": "raju bhai"}' 
+ </msg>
+<msg time="2025-12-08T13:25:57.515618" level="INFO">POST Response : url=https://webservice.toscacloud.com/api/v1/Coffees 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Mon, 08 Dec 2025 07:55:53 GMT', 'Server': 'Microsoft-IIS/10.0', 'Content-Encoding': 'gzip', 'Set-Cookie': 'ARRAffinity=32975fd413347f79454db32b27e4eceb9a559f1f1a07633ca9e6881566d65e6c;Path=/;HttpOnly;Secure;Domain=webservice.toscacloud.com, ARRAffinitySameSite=32975fd413347f79454db32b27e4eceb9a559f1f1a07633ca9e6881566d65e6c;Path=/;HttpOnly;SameSite=None;Secure;Domain=webservice.toscacloud.com', 'Transfer-Encoding': 'chunked', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000', 'api-supported-versions': '1.0', 'Content-Security-Policy': "default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'", 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff'} 
+ body={"description":"raju raju","id":11237,"name":"raju bhai"} 
+ </msg>
+<msg time="2025-12-08T13:25:57.515714" level="INFO">C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\.venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'webservice.toscacloud.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-12-08T13:25:57.516047" level="FAIL">Url: https://webservice.toscacloud.com/api/v1/Coffees Expected status: 200 != 444</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/api/v1/Coffees</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=None</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-12-08T13:25:56.458768" elapsed="1.059239">Url: https://webservice.toscacloud.com/api/v1/Coffees Expected status: 200 != 444</status>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2025-12-08T13:25:57.518394" elapsed="0.000030"/>
+</kw>
+<kw name="Convert To Dictionary">
+<var>${json_result}</var>
+<arg>${response.text}</arg>
+<status status="NOT RUN" start="2025-12-08T13:25:57.518766" elapsed="0.000026"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${coffee_id}</var>
+<arg>${json_result['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-12-08T13:25:57.519087" elapsed="0.000025"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${coffee_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-12-08T13:25:57.519407" elapsed="0.000024"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Created Coffee ID: ${coffee_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-12-08T13:25:57.519722" elapsed="0.000024"/>
+</kw>
+<doc>Create a new coffee and store its generated ID</doc>
+<status status="FAIL" start="2025-12-08T13:25:56.455902" elapsed="1.064585">Url: https://webservice.toscacloud.com/api/v1/Coffees Expected status: 200 != 444</status>
+</test>
+<status status="FAIL" start="2025-12-08T13:25:56.327953" elapsed="1.193772"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Postchain" id="s1" pass="0" fail="1" skip="0">Postchain</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-12-08T13:25:56.454848" level="ERROR">Error in file 'C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\apitesting\postchain.robot' on line 4: Importing library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\.venv\Scripts\robot.exe
+  C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\.venv\Scripts\python314.zip
+  C:\Users\AIFA USER 77\AppData\Local\Programs\Python\Python314\DLLs
+  C:\Users\AIFA USER 77\AppData\Local\Programs\Python\Python314\Lib
+  C:\Users\AIFA USER 77\AppData\Local\Programs\Python\Python314
+  C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\.venv
+  C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\.venv\Lib\site-packages</msg>
+</errors>
+</robot>
