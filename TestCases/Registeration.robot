@@ -15,7 +15,7 @@ Registration Test
     Select Gender    M
     Enter FirstName    vijay
     Enter LastName     Tester123
-    Enter Email        tester123321@gmail.com
+    Enter Email        tester1233215@gmail.com
     Enter Password     Tester@123
     Enter ConfirmPassword    Tester@123
     Click Register Button
