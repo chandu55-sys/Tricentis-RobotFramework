@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-31T12:10:08.652348" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginDDT" source="C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\TestCases\LoginDDT.robot">
+<test id="s1-t1" name="ExcelTest" line="12">
+<kw name="Login Test">
+<msg time="2025-12-31T12:10:08.992670" level="FAIL">Variable '${username}' not found. Did you mean:
+    ${txt_user_name}</msg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="FAIL" start="2025-12-31T12:10:08.990718" elapsed="0.002111">Variable '${username}' not found. Did you mean:
+    ${txt_user_name}</status>
+</kw>
+<status status="FAIL" start="2025-12-31T12:10:08.989518" elapsed="0.003599">Variable '${username}' not found. Did you mean:
+    ${txt_user_name}</status>
+</test>
+<status status="FAIL" start="2025-12-31T12:10:08.666244" elapsed="0.327727"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="LoginDDT" id="s1" pass="0" fail="1" skip="0">LoginDDT</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-12-31T12:10:08.975221" level="ERROR">Error in file 'C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo\TestCases\LoginDDT.robot' on line 6: Importing library 'DataDriver' failed: ModuleNotFoundError: No module named 'DataDriver'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\AIFA USER 77\AppData\Roaming\JetBrains\PyCharm2025.2\plugins\robotframework-intellij\lib\robotframework_debug_adapter
+  C:\Users\AIFA USER 77\PycharmProjects\TricentisDemo
+  C:\Users\AIFA USER 77\AppData\Roaming\JetBrains\PyCharm2025.2\plugins\robotframework-intellij\lib
+  C:\Users\AIFA USER 77\AppData\Roaming\JetBrains\PyCharm2025.2\plugins\robotframework-intellij\lib\robotframework_ls\vendored
+  C:\Users\AIFA USER 77\AppData\Local\Programs\Python\Python314\python314.zip
+  C:\Users\AIFA USER 77\AppData\Local\Programs\Python\Python314\DLLs
+  C:\Users\AIFA USER 77\AppData\Local\Programs\Python\Python314\Lib
+  C:\Users\AIFA USER 77\AppData\Local\Programs\Python\Python314
+  C:\Users\AIFA USER 77\AppData\Local\Programs\Python\Python314\Lib\site-packages</msg>
+</errors>
+</robot>
